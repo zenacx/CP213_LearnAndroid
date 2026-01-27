@@ -1,4 +1,4 @@
-package com.example.a510lablearnandroid
+package com.example.a510lablearbandaroid
 
 import org.junit.Test
 

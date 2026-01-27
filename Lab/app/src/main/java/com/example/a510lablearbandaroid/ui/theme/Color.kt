@@ -1,4 +1,4 @@
-package com.example.a510lablearnandroid.ui.theme
+package com.example.a510lablearbandaroid.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
