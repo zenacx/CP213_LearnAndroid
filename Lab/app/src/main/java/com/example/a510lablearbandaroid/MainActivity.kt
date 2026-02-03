@@ -87,13 +87,9 @@ class MainActivity : ComponentActivity() {
 
                         Text(text = "STR", fontSize = 32.sp)
                         Text(text = STR.toString(), fontSize = 32.sp)
-                        modifier = Modifier.clickable {
-                            STR-- }
-                        )
+                        Text(text = "-", modifier = Modifier.clickable { STR-- },fontSize = 32.sp)
 
-                            modifier = Modifier.clickable {
-                                STR-- }
-                        )
+
                     }
                     Column {
                         Text(text = "AGI", fontSize = 32.sp)
