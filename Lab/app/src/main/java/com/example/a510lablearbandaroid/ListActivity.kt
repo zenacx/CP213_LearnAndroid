@@ -36,12 +36,13 @@ fun ListScreen() {
     //ทำง่าย
     Column (modifier = Modifier.fillMaxSize().background(Color.Red).padding(16.dp)){
         Column (modifier = Modifier.fillMaxSize().background(Color.Gray).padding(16.dp)){
-            
-        }
-    }
-    LazyColumn {
+
+
+    LazyColumn (modifier =  Modifier.fillMaxSize().background(Color.White).padding(16.dp)){
         items(allKantoPokemon) { item ->
             Text(text = item.name)
+                }
+            }
         }
     }
 }
