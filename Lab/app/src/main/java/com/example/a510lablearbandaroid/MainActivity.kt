@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,7 +15,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -52,8 +58,13 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier
                         .size(size = 200.dp)
                         .align(Alignment.CenterHorizontally)
-                        .padding(top = 16.dp)
+                        .padding(all = 32.dp)
                 )
+
+                var STR by remember { mutableStateOf(8) }
+                var AGI by remember { mutableStateOf(10) }
+                var INT by remember { mutableStateOf(15) }
+
                 //status
                 Row (
                     modifier = Modifier.fillMaxWidth(),
@@ -61,16 +72,36 @@ class MainActivity : ComponentActivity() {
 
                 ){
                     Column {
+                        Button(onClick = {
+                            STR = STR + 1 //STR++
+                        }) {
+                            Image(
+                                painter = painterResource(id = R.drawable.up),
+                                contentDescription = "up",
+                                modifier = Modifier
+                                    .size(size = 20.dp)
+                                   //align(Alignment.CenterHorizontally)
+                                  //.padding(all = 32.dp)
+                            )
+                        }
+
                         Text(text = "STR", fontSize = 32.sp)
-                        Text(text = "10", fontSize = 32.sp)
+                        Text(text = STR.toString(), fontSize = 32.sp)
+                        modifier = Modifier.clickable {
+                            STR-- }
+                        )
+
+                            modifier = Modifier.clickable {
+                                STR-- }
+                        )
                     }
                     Column {
                         Text(text = "AGI", fontSize = 32.sp)
-                        Text(text = "10", fontSize = 32.sp)
+                        Text(text = AGI.toString(), fontSize = 32.sp)
                     }
                     Column {
                         Text(text = "INT", fontSize = 32.sp)
-                        Text(text = "10", fontSize = 32.sp)
+                        Text(text = INT.toString(), fontSize = 32.sp)
                     }
                 }
             }
