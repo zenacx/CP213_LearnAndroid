@@ -100,9 +100,12 @@ class MainActivity : ComponentActivity() {
                     Column {
                         Text(text = "INT", fontSize = 32.sp)
                         Text(text = INT.toString(), fontSize = 32.sp)
+
                     }
                 }
             }
         }
     }
 }
+
+//checkin 24/2/2569
