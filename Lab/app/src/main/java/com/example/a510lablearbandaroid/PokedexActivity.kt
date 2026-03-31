@@ -30,6 +30,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import com.example.a510lablearbandaroid.Utils.PokemonEntry
 
 class PokedexActivity : ComponentActivity() {
 
@@ -54,7 +55,7 @@ fun PokedexScreen(viewModel: PokemonViewModel) {
     Column(modifier = Modifier.fillMaxSize().background(Color.Red).padding(16.dp)) {
         Column(modifier = Modifier.fillMaxSize().background(Color.Gray).padding(16.dp)) {
             LazyColumn(modifier = Modifier.fillMaxSize().background(Color.White).padding(16.dp)) {
-                items(pokemonList) { item ->
+                items(pokemonList) { item: PokemonEntry ->
                     Row(
                         modifier = Modifier.padding(8.dp),
                         verticalAlignment = Alignment.CenterVertically,
